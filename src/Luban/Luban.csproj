@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   - MIT License
   -
   - Copyright (c) 2023 Code Philosophy Technology Ltd.
@@ -25,10 +25,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <OutputType>Exe</OutputType>
+        <RepositoryUrl>https://github.com/focus-creative-games/luban</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackAsTool>True</PackAsTool>
+        <FileVersion>$(AssemblyVersion)</FileVersion>
+        <Version>2.13.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -54,12 +59,20 @@
       <ProjectReference Include="..\Luban.PHP\Luban.PHP.csproj" />
       <ProjectReference Include="..\Luban.Protobuf\Luban.Protobuf.csproj" />
       <ProjectReference Include="..\Luban.Python\Luban.Python.csproj" />
+      <ProjectReference Include="..\Luban.Rust\Luban.Rust.csproj" />
       <ProjectReference Include="..\Luban.Schema.Builtin\Luban.Schema.Builtin.csproj" />
       <ProjectReference Include="..\Luban.Typescript\Luban.Typescript.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Plugin\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
